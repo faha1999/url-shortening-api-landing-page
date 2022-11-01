@@ -1,0 +1,44 @@
+.btn {
+  padding: 11px 32px;
+  font-weight: 600;
+
+  &-info {
+    color: #ffffff;
+    background-color: $Cyan;
+    border-color: $Cyan;
+
+    &:focus {
+      background-color: hsl(180, 68%, 46%);
+      border-color: hsl(180, 68%, 46%);
+    }
+    &:hover {
+      background-color: hsl(180, 75%, 54%);
+      border-color: hsl(180, 75%, 54%);
+      color: #ffffff;
+    }
+  }
+  &-primary {
+    color: #ffffff;
+    background-color: $DarkViolet;
+    border-color: $DarkViolet;
+
+    &:focus {
+      background-color: $VeryDarkBlue;
+      border-color: $VeryDarkBlue;
+    }
+    &:hover {
+      background-color: $VeryDarkViolet;
+      border-color: $VeryDarkViolet;
+      color: #ffffff;
+    }
+  }
+}
+
+.text {
+  &-info {
+    color: $Cyan;
+  }
+  &-danger {
+    color: $Red;
+  }
+}
