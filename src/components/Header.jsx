@@ -1,14 +1,11 @@
 import React from 'react';
+import logo from '../assets/images/logo.svg';
 
 export const Header = () => {
   return (
     <nav className="navbar navbar-expand-lg">
       <div className="container">
-        <img
-          className="navbar-logo"
-          src={require('./../assets/img/logo.svg').default}
-          alt=""
-        />
+        <img className="navbar-logo" src={logo} alt="logo" />
         <button
           className="navbar-toggler p-0"
           type="button"
@@ -25,17 +22,17 @@ export const Header = () => {
         <div className="collapse navbar-collapse" id="navbarScroll">
           <ul className="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll">
             <li className="nav-item">
-              <a className="nav-link" href={href}>
+              <a className="nav-link" href="#">
                 Features
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href={href}>
+              <a className="nav-link" href="#">
                 Pricing
               </a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href={href}>
+              <a className="nav-link" href="#">
                 Resources
               </a>
             </li>
