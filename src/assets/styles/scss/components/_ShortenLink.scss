@@ -1,0 +1,136 @@
+.shorten {
+  background-color: #eff1f7;
+  padding: 76px 0 67px;
+
+  .card-form {
+    padding: 52px 64px;
+    background-color: hsl(257, 27%, 26%);
+    background-image: url('../../images/bg-shorten-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    margin-bottom: 24px;
+    margin-top: -152px;
+
+    .form-control {
+      border: none;
+      border-radius: 8px;
+      padding: 11px 26px;
+      font-weight: 500;
+      color: hsl(257, 27%, 26%);
+
+      &::placeholder {
+        font-weight: 500;
+        color: #ababab;
+      }
+      &:focus {
+        box-shadow: none;
+      }
+      &.border-danger {
+        border: 3px solid hsl(0, 87%, 67%);
+      }
+    }
+    .validation {
+      margin-top: 12px;
+      font-style: italic;
+      font-weight: 500;
+    }
+    .btn {
+      padding: 11px;
+      border-radius: 8px;
+    }
+  }
+  .card-link {
+    padding: 16px 24px;
+    border-radius: 6px;
+    box-shadow: 0px 0px 4px 3px rgba(191, 191, 191, 0.15);
+    margin-bottom: 16px;
+    margin-left: 0;
+    font-size: 18px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+    .card-header {
+      padding: 0;
+      background: #ffffff;
+      border: none;
+      width: 50%;
+
+      p {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+    }
+    .card-body {
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    p {
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+    .btn {
+      font-size: 14px;
+      padding: 6px 22px;
+      border-radius: 5px;
+
+      &:focus {
+        background: $DarkViolet;
+        border: 1px solid $DarkViolet;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .shorten {
+    padding: 76px 0 48px;
+
+    .card-form {
+      padding: 24px;
+      background-image: url('../../images/bg-shorten-mobile.svg');
+      flex-direction: column;
+      align-items: flex-start;
+
+      .form-control {
+        padding: 11px 17px;
+        margin-bottom: 16px;
+      }
+    }
+
+    .card-link {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0;
+
+      .card-header {
+        padding: 14px 16px;
+        border-bottom: 1px solid #ababab;
+        border-radius: 6px 6px 0 0;
+        width: 100%;
+      }
+
+      .card-body {
+        padding: 16px;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .text-info {
+        margin-bottom: 14px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  }
+}

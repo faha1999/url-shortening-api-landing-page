@@ -1,120 +1,90 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 
-class ShortenLink extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: 'Shorten',
-      error: null,
-      value: '',
-      items: [],
-      btnClicked: '',
-      linkStorage: JSON.parse(localStorage.getItem('data')),
-    };
+const getLocalStorage = () => {
+  let links = localStorage.getItem('links');
 
-    this.handleChange = this.handleChange.bind(this);
+  if (links) {
+    return JSON.parse(localStorage.getItem('links'));
+  } else {
+    return [];
   }
+};
 
-  handleChange(event) {
-    this.setState({ value: event.target.value });
-  }
+export const ShortenLink = () => {
+  const [text, setText] = useState('');
+  const [links, setLinks] = useState(getLocalStorage());
+  const [buttonText, setButtonText] = useState('Copy');
 
-  fetchAPI = () => {
-    let param = this.state.value;
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-    fetch(`https://api.shrtco.de/v2/shorten?url=${param}`)
-      .then((res) => res.json())
-      .then((result) => {
-        if (localStorage.getItem('data') == null) {
-          localStorage.setItem('data', '[]');
-        }
+    if (!text) {
+      alert('Input is empty');
+    } else {
+      const shortenLink = async () => {
+        const res = await fetch(`https://api.shrtco.de/v2/shorten?url=${text}`);
+        const data = await res.json();
+        console.log(data.result);
+        setLinks(data.result);
+        setText('');
+      };
 
-        var old_data = JSON.parse(localStorage.getItem('data'));
-
-        if (result.ok === true) {
-          old_data.push(result);
-        }
-
-        localStorage.setItem('data', JSON.stringify(old_data));
-
-        this.setState({
-          items: result,
-          linkStorage: JSON.parse(localStorage.getItem('data')),
-        });
-      })
-      .catch((error) => console.log('error', error));
+      shortenLink();
+    }
   };
 
-  render() {
-    const { items, linkStorage } = this.state;
-    return (
+  const handleCopy = () => {
+    navigator.clipboard.writeText(links.full_short_link);
+    setButtonText('Copied!');
+  };
+
+  useEffect(() => {
+    localStorage.setItem('links', JSON.stringify(links));
+  }, [links]);
+
+  return (
+    <>
       <section className="shorten">
         <div className="container">
-          <div className="card-form">
+          <form className="card-form" onSubmit={handleSubmit}>
             <div className="row">
               <div className="col-sm-12 col-md-9 col-lg-10">
                 <input
-                  type="text"
-                  className={`form-control ${
-                    items.ok === false ? 'border-danger' : ''
-                  }`}
-                  id="inputShorten"
-                  placeholder="Shorten a link here..."
-                  required
-                  value={this.state.value}
-                  onChange={this.handleChange}
+                  type="url"
+                  placeholder="Shorten a link here"
+                  className="form-control"
+                  value={text}
+                  onChange={(e) => setText(e.target.value)}
                 />
               </div>
+
               <div className="col-sm-12 col-md-3 col-lg-2">
                 <button
+                  type="submit"
                   className="btn btn-info d-block w-100"
-                  onClick={this.fetchAPI}
+                  onClick={handleSubmit}
                 >
                   Shorten It!
                 </button>
               </div>
             </div>
-            {items.ok === false ? (
-              <p className="validation text-danger">Please add a link</p>
-            ) : (
-              ''
-            )}
+          </form>
+
+          <div className="card card-link border-0">
+            <div className="card-header">
+              <p>{links.original_link}</p>
+            </div>
+
+            <div className="card-body">
+              <p className="text-info me-0 me-sm-4">{links.full_short_link}</p>
+
+              <button onClick={handleCopy} className="btn btn-info">
+                {buttonText}
+              </button>
+            </div>
           </div>
-          {localStorage.getItem('data') != null &&
-            linkStorage
-              .reverse()
-              .slice(0, 3)
-              .map((item, index) => (
-                <div className="card card-link border-0" key={index}>
-                  <div className="card-header">
-                    <p>{item.result.original_link}</p>
-                  </div>
-                  <div className="card-body">
-                    <p className="text-info me-0 me-sm-4">
-                      {item.result.short_link}
-                    </p>
-                    <button
-                      className={`btn ${
-                        index === this.state.btnClicked
-                          ? 'btn-primary'
-                          : 'btn-info'
-                      }`}
-                      onClick={() => {
-                        navigator.clipboard.writeText(item.result.short_link);
-                        this.setState({
-                          btnClicked: index,
-                        });
-                      }}
-                    >
-                      {index === this.state.btnClicked ? 'Copied!' : 'Copy'}
-                    </button>
-                  </div>
-                </div>
-              ))}
         </div>
       </section>
-    );
-  }
-}
-
-export default ShortenLink;
+    </>
+  );
+};

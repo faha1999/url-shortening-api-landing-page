@@ -17,21 +17,6 @@
       color: #ffffff;
     }
   }
-  &-primary {
-    color: #ffffff;
-    background-color: $DarkViolet;
-    border-color: $DarkViolet;
-
-    &:focus {
-      background-color: $VeryDarkBlue;
-      border-color: $VeryDarkBlue;
-    }
-    &:hover {
-      background-color: $VeryDarkViolet;
-      border-color: $VeryDarkViolet;
-      color: #ffffff;
-    }
-  }
 }
 
 .text {
