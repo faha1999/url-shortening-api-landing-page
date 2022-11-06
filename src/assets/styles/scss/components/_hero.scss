@@ -8,7 +8,7 @@
   .row {
     min-height: calc(100vh - 7.25rem);
   }
-  h1 {
+  h2 {
     font-size: 4.25rem;
     font-weight: 700;
     line-height: 1.1;
@@ -23,7 +23,7 @@
 
 @media (max-width: 62rem) {
   .hero {
-    h1 {
+    h2 {
       font-size: 2.8125rem;
     }
     p {
@@ -40,7 +40,7 @@
       width: 100%;
     }
 
-    h1 {
+    h2 {
       font-size: 2.25rem;
       font-weight: 700;
     }
@@ -60,7 +60,7 @@
       width: 126vw;
       margin-bottom: 1.9375rem;
     }
-    h1 {
+    h2 {
       font-size: 2.25rem;
       font-weight: 700;
       text-align: center;

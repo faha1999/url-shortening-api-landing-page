@@ -10,7 +10,7 @@ export const Hero = () => {
             <img src={working} alt="working" />
           </div>
           <div className="col-sm-6 col-md-6">
-            <h1 className="mb-1">More than just shorter links</h1>
+            <h2 className="mb-1">More than just shorter links</h2>
             <p className="mb-4">
               Build your brand's recognition and get detailed insights on how
               your links are performing.
