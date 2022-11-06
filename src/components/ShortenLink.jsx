@@ -44,7 +44,7 @@ export const ShortenLink = () => {
 
   return (
     <>
-      <section className="shorten">
+      <div className="shorten">
         <div className="container">
           <form className="card-form" onSubmit={handleSubmit}>
             <div className="row">
@@ -64,7 +64,7 @@ export const ShortenLink = () => {
                   className="btn btn-info d-block w-100"
                   onClick={handleSubmit}
                 >
-                  <h2>Shorten It!</h2>
+                  Shorten It!
                 </button>
               </div>
             </div>
@@ -84,7 +84,7 @@ export const ShortenLink = () => {
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </>
   );
 };
