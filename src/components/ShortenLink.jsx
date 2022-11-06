@@ -72,7 +72,7 @@ export const ShortenLink = () => {
 
           <div className="card card-link border-0">
             <div className="card-header">
-              <p>{links.original_link}</p>
+              <h2>{links.original_link}</h2>
             </div>
 
             <div className="card-body">

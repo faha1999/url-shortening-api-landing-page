@@ -12,7 +12,7 @@ export const Footer = () => {
             <img className="footer-logo" src={logo} alt="footer-logo" />
           </div>
           <div className="col-md-6 col-lg-2">
-            <h2 className="text-white">Features</h2>
+            <h1 className="text-white">Features</h1>
             <ul>
               <li>
                 <a href={href}>Link Shortening</a>
@@ -26,7 +26,7 @@ export const Footer = () => {
             </ul>
           </div>
           <div className="col-md-6 col-lg-2">
-            <h2 className="text-white">Resources</h2>
+            <h1 className="text-white">Resources</h1>
             <ul>
               <li>
                 <a href={href}>Blog</a>
@@ -40,7 +40,7 @@ export const Footer = () => {
             </ul>
           </div>
           <div className="col-md-6 col-lg-2">
-            <h2 className="text-white">Company</h2>
+            <h1 className="text-white">Company</h1>
             <ul>
               <li>
                 <a href={href}>About</a>
