@@ -18,7 +18,7 @@ export const Statistic = () => {
               <div className="icon">
                 <img src={brand} alt="icon-brand-recognition" />
               </div>
-              <h4>Brand Recognition</h4>
+              <h2>Brand Recognition</h2>
               <p className="mb-0">
                 Boost your brand recognition with each click. Generic links
                 don’t mean a thing. Branded links help instil confidence in your
@@ -32,7 +32,7 @@ export const Statistic = () => {
               <div className="icon">
                 <img src={record} alt="icon-detailed-records" />
               </div>
-              <h4>Detailed Records</h4>
+              <h2>Detailed Records</h2>
               <p className="mb-0">
                 Gain insights into who is clicking your links. Knowing when and
                 where people engage with your content helps inform better
@@ -47,7 +47,7 @@ export const Statistic = () => {
               <div className="icon">
                 <img src={customizable} alt="icon-fully-customizable" />
               </div>
-              <h4>Fully Customizable</h4>
+              <h2>Fully Customizable</h2>
               <p className="mb-0">
                 Improve brand awareness and content discoverability through
                 customizable links, supercharging audience engagement.
