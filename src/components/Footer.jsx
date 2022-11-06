@@ -12,7 +12,7 @@ export const Footer = () => {
             <img className="footer-logo" src={logo} alt="footer-logo" />
           </div>
           <div className="col-md-6 col-lg-2">
-            <h5 className="text-white">Features</h5>
+            <h2 className="text-white">Features</h2>
             <ul>
               <li>
                 <a href={href}>Link Shortening</a>
@@ -26,7 +26,7 @@ export const Footer = () => {
             </ul>
           </div>
           <div className="col-md-6 col-lg-2">
-            <h5 className="text-white">Resources</h5>
+            <h2 className="text-white">Resources</h2>
             <ul>
               <li>
                 <a href={href}>Blog</a>
@@ -40,7 +40,7 @@ export const Footer = () => {
             </ul>
           </div>
           <div className="col-md-6 col-lg-2">
-            <h5 className="text-white">Company</h5>
+            <h2 className="text-white">Company</h2>
             <ul>
               <li>
                 <a href={href}>About</a>
@@ -96,7 +96,7 @@ export const Footer = () => {
           Frontend Mentor
         </a>
         . Coded by{' '}
-        <a href="https://github.com/faha1999" target="_blank" rel="faha1999">
+        <a href="https://github.com/faha1999" target="_blank">
           faha1999
         </a>
         .

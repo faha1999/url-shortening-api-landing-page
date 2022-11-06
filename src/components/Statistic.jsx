@@ -7,7 +7,7 @@ export const Statistic = () => {
   return (
     <section className="statistic">
       <div className="container-fluid container-md">
-        <h3 className="text-center mb-4">Advanced Statistics</h3>
+        <h1 className="text-center mb-4">Advanced Statistics</h1>
         <p className="text-center">
           Track how your links are performing across the web with our <br />
           advanced statistics dashboard.
