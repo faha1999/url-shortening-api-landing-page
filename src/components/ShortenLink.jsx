@@ -64,7 +64,7 @@ export const ShortenLink = () => {
                   className="btn btn-info d-block w-100"
                   onClick={handleSubmit}
                 >
-                  Shorten It!
+                  <h2>Shorten It!</h2>
                 </button>
               </div>
             </div>
@@ -72,7 +72,7 @@ export const ShortenLink = () => {
 
           <div className="card card-link border-0">
             <div className="card-header">
-              <h2>{links.original_link}</h2>
+              <p>{links.original_link}</p>
             </div>
 
             <div className="card-body">
